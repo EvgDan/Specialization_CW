@@ -4,16 +4,24 @@
 // либо задать на старте выполнения алгоритма. При решении не рекомендуется пользоваться коллекциями, 
 // лучше обойтись исключительно массивами.
 
-Console.WriteLine("Исходный массив данных: 1234, 1567, -2, computer science");
-string ish = "1234, 1567, -2, computer science";
+Console.WriteLine("Исходный массив данных: 12, 1567, -2, computer science");
+string ish = "12, 1567, -2, computer science";
 string [] parts = ish.Split(", ");
-string result = "";
+string [] result = new string [ish.Length];
+int q = 0;
 
     for (int n = 0; n < parts.Length; n++)
     {
         if (parts[n].Length <=3) 
         {
-            result = result + parts[n] + ", "; 
+            result[q] = parts[n] + ", ";
+            q ++;
         }
     }
-Console.WriteLine($"Массив из строк, длина которых меньше либо равна 3 символам: {result}");
+
+Console.WriteLine("Массив из строк, длина которых меньше либо равна 3 символам:");
+
+for (int i = 0; i < result.Length; i++)
+    {
+        Console.Write(result[i]);
+    }
